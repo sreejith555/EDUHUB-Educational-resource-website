@@ -1,7 +1,5 @@
-// scholarships.js — EduHub Scholarships Page
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Populate category filter dropdown
+ 
   fetch('/api/categories')
     .then(r => r.json())
     .then(cats => {
@@ -15,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(() => {});
 
-  // Initial load
+
   loadData();
 });
 

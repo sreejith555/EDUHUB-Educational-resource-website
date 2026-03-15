@@ -1,7 +1,4 @@
-// courses.js — EduHub Courses Page
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Populate field filter dropdown
   fetch('/api/fields/courses')
     .then(r => r.json())
     .then(fields => {
@@ -15,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(() => {});
 
-  // Initial load
   loadData();
 });
 

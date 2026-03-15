@@ -1,7 +1,5 @@
-// exams.js — EduHub Entrance Exams Page
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Populate field filter dropdown
   fetch('/api/fields/exams')
     .then(r => r.json())
     .then(fields => {
@@ -15,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(() => {});
 
-  // Initial load
   loadData();
 });
 

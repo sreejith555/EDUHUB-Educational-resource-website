@@ -1,4 +1,3 @@
-// events.js — EduHub Events Page
 
 document.addEventListener('DOMContentLoaded', () => {
   loadData();

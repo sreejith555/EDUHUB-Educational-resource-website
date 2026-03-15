@@ -40,7 +40,7 @@ def safe(rows):
     return json.loads(json.dumps(rows, default=serial))
 
 
-# ─── Pages ────────────────────────────────────────────────────────────────────
+# Pages 
 
 @app.route("/")
 def index():
@@ -84,7 +84,7 @@ def events_page():
     return render_template("events.html")
 
 
-# ─── API ──────────────────────────────────────────────────────────────────────
+#API
 
 @app.route("/api/courses")
 def api_courses():

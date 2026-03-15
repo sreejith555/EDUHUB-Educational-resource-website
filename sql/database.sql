@@ -1,9 +1,7 @@
 CREATE DATABASE IF NOT EXISTS eduhub CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE eduhub;
 
--- ─────────────────────────────────────────────
 -- USERS
--- ─────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS users (
     id          INT AUTO_INCREMENT PRIMARY KEY,
     user_name   VARCHAR(100) NOT NULL,
@@ -17,9 +15,7 @@ INSERT INTO users (user_name, email_id, password) VALUES
 ('Rahul Mehta',   'rahul@eduhub.in',  'demo123'),
 ('Priya Nair',    'priya@eduhub.in',  'demo123');
 
--- ─────────────────────────────────────────────
 -- FILTERS
--- ─────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS filters (
     id      INT AUTO_INCREMENT PRIMARY KEY,
     type    VARCHAR(50),
@@ -32,9 +28,7 @@ INSERT INTO filters (type, value) VALUES
 ('category','Merit-based'),('category','Need-based'),('category','SC/ST'),
 ('category','Women'),('category','Minority');
 
--- ─────────────────────────────────────────────
 -- COURSES
--- ─────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS courses (
     id          INT AUTO_INCREMENT PRIMARY KEY,
     name        VARCHAR(200) NOT NULL,
@@ -89,9 +83,7 @@ INSERT INTO courses (name, host, field, type, description, eligibility, fees, li
  'NEET UG qualifier; 10+2 with PCB (50%+)',
  200000.00, 'https://www.maids.ac.in', '2025-07-15');
 
--- ─────────────────────────────────────────────
 -- ENTRANCE EXAMS
--- ─────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS entrance_exams (
     id          INT AUTO_INCREMENT PRIMARY KEY,
     name        VARCHAR(200) NOT NULL,
@@ -146,9 +138,7 @@ INSERT INTO entrance_exams (name, host, field, type, description, eligibility, f
  'BAMS/BUMS/BSMS/BHMS degree; valid registration with state council',
  1500.00, '2025-06-20', 'https://aiapget.nta.nic.in');
 
--- ─────────────────────────────────────────────
 -- SCHOLARSHIPS
--- ─────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS scholarships (
     id            INT AUTO_INCREMENT PRIMARY KEY,
     name          VARCHAR(200) NOT NULL,
@@ -203,9 +193,7 @@ INSERT INTO scholarships (name, host, category, field, description, eligibility,
  'SC/ST student; family income below ₹2.5 lakh; enrolled in post-matric level course',
  40000.00, '2025-10-31', 'https://scholarships.gov.in');
 
--- ─────────────────────────────────────────────
 -- EVENTS
--- ─────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS events (
     id          INT AUTO_INCREMENT PRIMARY KEY,
     name        VARCHAR(200) NOT NULL,

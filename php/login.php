@@ -1,10 +1,4 @@
 <?php
-// php/login.php — EduHub PHP Authentication (only PHP file in the project)
-// This is an alternative login handler using PHP + MySQL.
-// The primary login is handled by Flask (/api/login).
-// To use this file: point your web server's /login route to this file
-// and ensure session handling matches your setup.
-
 session_start();
 
 $hostname = "localhost";

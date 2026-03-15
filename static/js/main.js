@@ -1,31 +1,26 @@
-// main.js — EduHub Shared Utilities
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Show username from sessionStorage
+
   const username = sessionStorage.getItem('eduhub_user') || 'User';
   const el = document.getElementById('headerUsername');
   if (el) el.textContent = username;
 });
 
-/**
- * Highlight the active page link in both header nav and sidebar.
- * @param {string} page - e.g. 'home', 'courses', 'exams', ...
+/** 
+ * @param {string} page 
  */
 function setActivePage(page) {
-  // Header nav
   document.querySelectorAll('.nav-link').forEach(link => {
     link.classList.toggle('active', link.dataset.page === page);
   });
-  // Sidebar
+ 
   document.querySelectorAll('.sidebar-link').forEach(link => {
     link.classList.toggle('active', link.dataset.page === page);
   });
 }
 
 /**
- * Return a coloured badge HTML string for a given field.
  * @param {string} field
- * @returns {string} HTML
+ * @returns {string} 
  */
 function fieldBadge(field) {
   if (!field) return '';
@@ -41,7 +36,6 @@ function fieldBadge(field) {
 }
 
 /**
- * Format a fee in Indian Rupee style (e.g. ₹1,200 or "Free").
  * @param {number|null} fee
  * @returns {string}
  */
@@ -55,7 +49,7 @@ function formatFee(fee) {
 }
 
 /**
- * Format a scholarship amount nicely.
+ * Format scholarship amount.
  * @param {number} amount
  * @returns {string}
  */
@@ -68,7 +62,7 @@ function formatAmount(amount) {
 }
 
 /**
- * Format a date string (YYYY-MM-DD) to human-readable.
+ * Format a date string (YYYY-MM-DD).
  * @param {string} dateStr
  * @returns {string}
  */
@@ -107,7 +101,6 @@ function categoryBadge(cat) {
 }
 
 /**
- * Render an empty state message into a grid container.
  * @param {string} gridId
  * @param {string} msg
  */
