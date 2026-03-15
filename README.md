@@ -1,10 +1,10 @@
-# 🎓 EduHub — India's Education Discovery Platform
+# EduHub — India's Education Discovery Platform
 
 EduHub is a full-stack web application that helps students discover courses, entrance exams, scholarships, and events at India's top institutions. Built with Python Flask, MySQL, vanilla JavaScript, and a PHP login alternative.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 eduhub/
@@ -41,7 +41,7 @@ eduhub/
 
 ---
 
-## ✅ Requirements
+## Requirements
 
 | Requirement       | Version    |
 |-------------------|------------|
@@ -58,7 +58,7 @@ mysql-connector-python==8.3.0
 
 ---
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### Step 1 — Clone or download the project
 ```bash
@@ -109,7 +109,7 @@ You'll be redirected to the login page automatically.
 
 ---
 
-## 📦 Tech Stack
+## Tech Stack
 
 | Layer       | Technology                              |
 |-------------|------------------------------------------|
@@ -121,12 +121,13 @@ You'll be redirected to the login page automatically.
 
 ---
 
-## 🌐 Pages & Routes
+##  Pages & Routes
 
 | Route           | Description                        |
 |-----------------|------------------------------------|
 | `/`             | Redirects to `/login`              |
-| `/login`        | Login page                         |
+| `/login`        | Login 
+| `/signup`        | signup page                         |
 | `/home`         | Dashboard with stats               |
 | `/courses`      | Browse & filter courses            |
 | `/exams`        | Browse & filter entrance exams     |
@@ -134,7 +135,7 @@ You'll be redirected to the login page automatically.
 | `/events`       | Browse & search events             |
 | `/api/logout`   | Clears session, redirects to login |
 
-## 🔌 API Endpoints
+##  API Endpoints
 
 | Endpoint                 | Description                          |
 |--------------------------|--------------------------------------|
@@ -148,33 +149,3 @@ You'll be redirected to the login page automatically.
 | `GET /api/categories`    | Distinct scholarship categories      |
 
 ---
-
-## 🐙 Upload to GitHub
-
-```bash
-# 1. Initialise git (if not already done)
-git init
-
-# 2. Stage all files
-git add .
-
-# 3. Commit
-git commit -m "Initial commit: EduHub education platform"
-
-# 4. Create a new repo on github.com, then:
-git remote add origin https://github.com/yourusername/eduhub.git
-git branch -M main
-git push -u origin main
-```
-
----
-
-## 💡 Notes
-
-- The PHP file (`php/login.php`) is a self-contained alternative login handler. It is **not** used by the default Flask setup — it's there for environments that need PHP-based authentication.
-- All passwords in the demo database are stored as plain text (`demo123`) for learning purposes. In production, always hash passwords with `bcrypt` or `argon2`.
-- The `sessionStorage` key `eduhub_user` stores the logged-in username on the client side for display purposes.
-
----
-
-*Built with ❤️ for Indian students by EduHub.*
