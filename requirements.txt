@@ -1,0 +1,6 @@
+Python
+HTML
+CSS
+JavaScript
+flask==3.0.3
+mysql-connector

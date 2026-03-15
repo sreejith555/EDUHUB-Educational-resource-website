@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduHub — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  {% include 'partials/header.html' %}
+  <div class="app-body">
+    {% include 'partials/sidebar.html' %}
+    <main class="main-content">
+      <div class="page-hero">
+        <h1 class="page-heading">Dashboard</h1>
+        <p class="page-sub">Explore India's best courses, exams, scholarships &amp; events.</p>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid">
+        <a href="/courses" class="stat-card">
+          <span class="stat-icon"><i class="fa-solid fa-book-open"></i></span>
+          <div>
+            <div class="stat-num">{{ stats.courses }}</div>
+            <div class="stat-label">Courses</div>
+          </div>
+        </a>
+        <a href="/exams" class="stat-card">
+          <span class="stat-icon"><i class="fa-solid fa-file-pen"></i></span>
+          <div>
+            <div class="stat-num">{{ stats.exams }}</div>
+            <div class="stat-label">Entrance Exams</div>
+          </div>
+        </a>
+        <a href="/scholarships" class="stat-card">
+          <span class="stat-icon"><i class="fa-solid fa-trophy"></i></span>
+          <div>
+            <div class="stat-num">{{ stats.scholarships }}</div>
+            <div class="stat-label">Scholarships</div>
+          </div>
+        </a>
+        <a href="/events" class="stat-card">
+          <span class="stat-icon"><i class="fa-solid fa-calendar-days"></i></span>
+          <div>
+            <div class="stat-num">{{ stats.events }}</div>
+            <div class="stat-label">Events</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="dashboard-cols">
+        <!-- Upcoming Exams -->
+        <section class="dash-section">
+          <h2 class="section-title"><i class="fa-solid fa-clock"></i> Upcoming Exams</h2>
+          <div class="dash-list">
+            {% for e in upcoming %}
+            <div class="dash-item">
+              <div class="dash-item-main">
+                <div class="dash-item-name">{{ e.name }}</div>
+                <div class="dash-item-host">{{ e.host }}</div>
+              </div>
+              <div class="dash-item-right">
+                <div class="dash-date">{{ e.exam_date }}</div>
+                <a href="{{ e.link }}" target="_blank" class="dash-link">Visit →</a>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <a href="/exams" class="view-all-link">View all exams →</a>
+        </section>
+
+        <!-- Scholarship Deadlines -->
+        <section class="dash-section">
+          <h2 class="section-title"><i class="fa-solid fa-trophy"></i> Scholarship Deadlines</h2>
+          <div class="dash-list">
+            {% for s in schols %}
+            <div class="dash-item">
+              <div class="dash-item-main">
+                <div class="dash-item-name">{{ s.name }}</div>
+                <div class="dash-item-host">{{ s.host }}</div>
+              </div>
+              <div class="dash-item-right">
+                <div class="dash-amount">₹{{ "{:,.0f}".format(s.amount) }}</div>
+                <div class="dash-date">Due: {{ s.deadline_date }}</div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <a href="/scholarships" class="view-all-link">View all scholarships →</a>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="/static/js/main.js"></script>
+  <script>document.addEventListener('DOMContentLoaded',()=>setActivePage('home'));</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduHub — Sign Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="/static/css/login.css" />
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-left">
+      <div class="login-brand">
+        <span class="login-logo"><i class="fa-solid fa-graduation-cap"></i></span>
+        <h1 class="login-title">EduHub</h1>
+        <p class="login-tagline">India's Education Discovery Platform</p>
+      </div>
+      <div class="login-stats">
+        <div class="stat-item"><span class="stat-num">100+</span><span class="stat-label">Top Courses</span></div>
+        <div class="stat-item"><span class="stat-num">100+</span><span class="stat-label">Entrance Exams</span></div>
+        <div class="stat-item"><span class="stat-num">100+</span><span class="stat-label">Scholarships</span></div>
+        <div class="stat-item"><span class="stat-num">100+</span><span class="stat-label">Events</span></div>
+      </div>
+      <p class="login-quote">"The beautiful thing about learning is that no one can take it away from you." — B.B. King</p>
+    </div>
+    <div class="login-right">
+      <div class="login-card">
+        <h2 class="form-title">Create Account</h2>
+        <p class="form-subtitle">Join EduHub and start your educational journey</p>
+        <div id="errorBox" class="error-box" style="display:none;"></div>
+        <div id="successBox" class="success-box" style="display:none;"></div>
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" placeholder="e.g. Rohan Verma" autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="e.g. rohan@email.com" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Minimum 6 characters" autocomplete="new-password" />
+        </div>
+        <div class="form-group">
+          <label for="confirm">Confirm Password</label>
+          <input type="password" id="confirm" placeholder="Re-enter your password" autocomplete="new-password" />
+        </div>
+        <button id="signupBtn" class="btn-login" onclick="handleSignup()">
+          <i class="fa-solid fa-user-plus"></i> Create Account
+        </button>
+        <p class="switch-auth">Already have an account? <a href="/login">Sign In</a></p>
+      </div>
+    </div>
+  </div>
+  <script src="/static/js/signup.js"></script>
+</body>
+</html>
